@@ -8,7 +8,6 @@ spark = SparkSession \
 
 spark.conf.get
 
-query = 'SELECT * FROM REGIONS'
 rdbUser = 'OT'
 password = 'oracle'
 server = 'localhost'
@@ -24,11 +23,15 @@ df = spark.read \
     .option('url', jdbcUrl) \
     .option('user', rdbUser) \
     .option('password', password) \
-    .option('dbtable', '(select * from INVENTORIES where WAREHOUSE_ID < 7)') \
+    .option('dbtable', 'INVENTORIES') \
     .option('partitionColumn', 'WAREHOUSE_ID') \
     .option('lowerBound', 1) \
     .option('upperBound', 10) \
     .option('numPartitions', 3) \
     .load()
 
-df.show()
+df.printSchema()
+
+query = 'SELECT * FROM tempInventories WHERE WAREHOUSE_ID < 7'
+dfTempView = df.createTempView('tempInventories')
+spark.sql(query).show(10)
