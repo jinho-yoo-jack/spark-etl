@@ -1,13 +1,10 @@
 from pyspark.sql import SparkSession
-import pydeequ
 
 spark = SparkSession \
     .builder \
     .master("local") \
     .appName('rdb2hdfs') \
     .getOrCreate()
-
-spark.conf.get
 
 rdbUser = 'OT'
 password = 'oracle'
@@ -33,6 +30,10 @@ df = spark.read \
 
 df.printSchema()
 
+# Filtering
 query = 'SELECT * FROM tempInventories WHERE WAREHOUSE_ID < 7'
 dfTempView = df.createTempView('tempInventories')
-spark.sql(query).show(10)
+
+# Save as parquet at HDFS
+spark.sql(query).write.parquet("inventories.parquet")
+
