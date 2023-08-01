@@ -2,5 +2,15 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/packages/PySEAL" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/packages/PySEAL/SEALPython/pybind11" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/packages/Pyfhel" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/packages/Pyfhel/Pyfhel/backend/SEAL" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/packages/Pyfhel/Pyfhel/backend/palisade" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/packages/Pyfhel/Pyfhel/backend/palisade/third-party/cereal" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/packages/Pyfhel/Pyfhel/backend/palisade/third-party/google-benchmark" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/packages/Pyfhel/Pyfhel/backend/palisade/third-party/google-test" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/packages/Pyfhel/Pyfhel/backend/palisade/third-party/gperftools" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/packages/TenSEAL" vcs="Git" />
   </component>
 </project>
