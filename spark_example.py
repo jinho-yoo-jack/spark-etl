@@ -1,5 +1,4 @@
 from pyspark.sql import SparkSession, Row
-from pyspark.sql.functions import expr, col
 import tenseal as ts
 import pandas as pd
 
@@ -30,6 +29,7 @@ jdbcUrl = "jdbc:oracle:thin:@localhost:1521:XE"
 jdbcDriver = "oracle.jdbc.driver.OracleDriver"
 
 # def getDataFromRdb(rdbURL, rdbUser, rdbPassword):
+# jdbc -> HDFS
 df = spark.read \
     .format('jdbc') \
     .option('driver', jdbcDriver) \
